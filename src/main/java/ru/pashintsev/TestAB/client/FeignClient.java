@@ -1,10 +1,9 @@
-package ru.pashintsev.TestAB.service;
+package ru.pashintsev.TestAB.client;
 
-import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@FeignClient(value = "client", url = "https://openexchangerates.org/api")
-public interface FeignService {
+@org.springframework.cloud.openfeign.FeignClient(value = "client", url = "https://openexchangerates.org/api")
+public interface FeignClient {
 
     @GetMapping("/historical/2022-06-07.json?app_id=fcf13718dfde40aa89e938d61c78dec1")
     String getHistoricalValue();
